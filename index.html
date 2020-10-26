@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Finder</title>
+
+    <!-- import material css and js -->
+    <link href="css/material.css" rel="stylesheet">
+    <script src="js/material.js"></script>
+
+    
+</head>
+<body>
+    <div class="body">
+        <center>
+            <div class="card">
+                  <div class="fields">
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+                        <input type="email" class="mdc-text-field__input" aria-label="Label" placeholder="Username" id="uname">
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </div>
+    
+                      <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+                        <input type="password" class="mdc-text-field__input" aria-label="Label" placeholder="Password" id="pwd" >
+                        <div class="mdc-notched-outline">
+                          <div class="mdc-notched-outline__leading"></div>
+                          <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="loginBtn" id="loginBtn">
+                      <h1 class="mdc-typography--headline5">LOGIN</h1>
+                  </div>
+                  <div class="mdc-touch-target-wrapper" id="regis">
+                    <button class="mdc-button mdc-button--touch">
+                      <div class="mdc-button__ripple"></div>
+                      <span class="mdc-button__label">Register Now</span>
+                      <div class="mdc-button__touch"></div>
+                    </button>
+                  </div>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
+
+<script src="js/main.js" ></script>
+
+<style>
+    .body{
+        height: 100vh;
+        width: 100vw;
+        background: url('img/SVG/Asset\ 1.svg');
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+    .card{
+        height: 50vh;
+        border-radius: 30px;
+        width: 50vw;
+        box-shadow: 0px 0px 90px 0px rgba(0,0,0,0.5);
+        background: white ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .fields{
+        display: flex;
+        flex-direction: column;
+    }
+    .card .mdc-text-field{
+        width: 20vw;
+        margin: 2vh;
+    }
+    .loginBtn{
+        width: 20vw;
+        background: rgb(68, 68, 255);
+        height: 7vh;
+        border-radius: 20px;
+    }
+    .loginBtn h1{
+        color: white;
+    }
+</style>
