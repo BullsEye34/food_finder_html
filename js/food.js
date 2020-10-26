@@ -12,10 +12,15 @@ fetch("http://localhost:3000/items")
   })
   .then(function  (myJson) {
     console.log(myJson.data[0]);
-    //document.getElementById("card").innerHTML = `<h1>`+myJson.data[0]["image"]["data"]+`</h1>`;
-    var da=myJson.data[0]["image"];
-    console.log(toBase64( da["data"]))
-    document.getElementById("card").innerHTML = `<img src="data:image/png;base64,${toBase64( da["data"])}"/>`;
+    var da=myJson.data[0]["image"]; 
+    /*console.log(toBase64( da["data"]))
+    console.log("data:image/png;base64,${toBase64( da['data'])}") */
+    //document.getElementById("card").innerHTML = `<img src="data:image/png;base64,${toBase64( da["data"])}"/>`;
+    document.getElementById("itemIMG").innerHTML = `<img style="height:35vh; width:19vw; border-radius: 30px;" src="data:image/png;base64,${toBase64( da["data"])}"/>`;
+    //document.getElementById("itemIMG1").src=toBase64( da['data']);
+    document.getElementById("itemName").innerHTML = myJson.data[0]["name"];
+    document.getElementById("itemDesc").innerHTML = myJson.data[0]["description"];
+    document.getElementById("itemPrice").innerHTML = myJson.data[0]["price"];
 
   })
   .catch(function (error) {
