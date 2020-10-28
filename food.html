@@ -17,9 +17,9 @@
                 <img id="itemIMG1" src="" alt="" srcset="">
             </div>
             <div class="otherDetails">
-                <h1 class="mdc-typography--headline3" id="itemName"></h1>
-                <h3 class="mdc-typography--headline6" id="itemDesc"></h3>
-                <h2 class="mdc-typography--headline3" id="itemPrice"></h2>
+                <h1 class="mdc-typography--headline5" style="font-size: 30px; font-weight: 900;" id="itemName"></h1>
+                <h3 class="mdc-typography--caption" style="font-size: 10px; height: 60px; line-clamp: 5; text-overflow: ellipsis;overflow: hidden; " id="itemDesc"></h3>
+                <h2 class="mdc-typography--headline5" style="font-size: 30px;" id="itemPrice"></h2>
             </div>
         </div>
         
@@ -50,36 +50,37 @@
         align-items: center;
     }
     .item{
-        width: 89vw;
-        height: 38vh;
+        width: 30%;
+        height: 28vh;
         background: none;
-        border: 0.1px grey solid;
+       
         border-radius: 30px;
         display: flex;
         flex-direction: row;
         justify-content: start;
         align-items: center;
+        box-shadow: 0px 0px 90px 0px rgba(0,0,0,0.2);
     }
     .img{
-        width: 19vw;
-        height: 35vh;
+        width: 9vw;
+        height: 25vh;
         margin-left: 1vw;
         background: none;
-        border: 0.1px grey solid;
+        /* border: 0.1px grey solid; */
         border-radius: 30px;
     }
     .otherDetails{
         width: 99%;
-        height: 35vh;
+        height: 25vh;
         margin-right: 1vw;
         margin-left: 1vw;
         background: none;
-        border: 0.1px grey solid;
+        /* border: 0.1px grey solid; */
         border-radius: 30px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: left;
+        align-content: left;
     }
 </style>
 <script src="js/food.js"></script>
