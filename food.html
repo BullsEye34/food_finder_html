@@ -12,17 +12,13 @@
 <body>
    <center>
     <div class="mainCard" id="card">
-        <div class="item">
-            <div class="img" id="itemIMG">
-                <img id="itemIMG1" src="" alt="" srcset="">
+         
+        <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <ul></ul>
+            
             </div>
-            <div class="otherDetails">
-                <h1 class="mdc-typography--headline5" style="font-size: 30px; font-weight: 900;" id="itemName"></h1>
-                <h3 class="mdc-typography--caption" style="font-size: 10px; height: 60px; line-clamp: 5; text-overflow: ellipsis;overflow: hidden; " id="itemDesc"></h3>
-                <h2 class="mdc-typography--headline5" style="font-size: 30px;" id="itemPrice"></h2>
-            </div>
-        </div>
-        
+          </div>
     </div>
    </center>
 </body>
@@ -37,6 +33,7 @@
         display: flex;
         flex-direction: column;
         justify-content:center;
+        overflow: hidden;
     }
     .mainCard{
         height: 90vh;
@@ -44,14 +41,22 @@
         width: 90vw;
         box-shadow: 0px 0px 90px 0px rgba(0,0,0,0.5);
         background: white ;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        
+        overflow-y: scroll;
+        /* align-items: center; */
+    }
+    li{
+        text-decoration: none;
+        list-style-type: none;
+    }
+    ul{
+        text-decoration: none;
+        list-style-type: none;
     }
     .item{
-        width: 30%;
+        /* width: 30%; */
         height: 28vh;
+        margin: 2vw;
         background: none;
        
         border-radius: 30px;
