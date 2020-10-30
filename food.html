@@ -13,11 +13,34 @@
 </head>
 <body>
    <center>
-       <div class="carte">
-        <span class="material-icons" style="color: white; background-color: black; font-size: 12vh; margin: 1vh; border-radius: 1000px; padding: 2vh;">
+       <div class="carte" id="cartBtn">
+        <span class="material-icons" style="color: black; font-size: 12vh; margin: 1vh; border-radius: 1000px; padding: 2vh;">
             shopping_cart
             </span>
        </div>
+       <div id="myModal" class="modal">
+
+           <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1 class="mdc-typography--headline5">This is your Cart</h1>
+    <div class="cartItems">
+        <li id=0><div class="mdc-layout-grid__cell--span-6">
+            <div class="item1">
+            <div class="img" id="itemIMG">
+            <!-- <img style="height:25vh; width:9vw; border-radius: 30px;" src="data:image/png;base64,${toBase64( myJson.data[i]["image"]["data"])}"/> -->
+            </div>
+            <div class="otherDetails">
+                <h1 class="mdc-typography--headline5" style="font-size: 30px; font-weight: 900;" id="itemName">Name</h1>
+                <h3 class="mdc-typography--caption" style="font-size: 20px; height: 60px; line-clamp: 5; text-overflow: ellipsis;overflow: hidden; " id="itemDesc">DSEC</h3>
+                <h2 class="mdc-typography--headline5" style="font-size: 30px;" id="itemPrice">PRICE</h2>
+            </div>
+        </div> </div></li>
+    </div>
+  </div>
+        </div>
+      
+      </div>
     <div class="mainCard" id="card">
          
         <div class="mdc-layout-grid">
@@ -59,6 +82,9 @@
         overflow-y: scroll;
         /* align-items: center; */
     }
+    .mainCard::-webkit-scrollbar {
+        display: none;
+    }
     li{
         text-decoration: none;
         list-style-type: none;
@@ -68,6 +94,19 @@
         list-style-type: none;
     }
     .item{
+        /* width: 30%; */
+        height: 28vh;
+        margin: 2vw;
+        background: none;
+       
+        border-radius: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        box-shadow: 0px 0px 5000px 0px rgba(0,0,0,0.1);
+    }
+    .item1{
         /* width: 30%; */
         height: 28vh;
         margin: 2vw;
@@ -101,6 +140,45 @@
         justify-content: left;
         align-content: left;
     }
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    border-radius: 30px;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 <script src="js/main.js"></script>
 <script src="js/food.js"></script>

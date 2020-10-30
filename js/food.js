@@ -6,7 +6,8 @@ function toBase64(arr) {
     );
  }
 
- console.log(isAdm)
+ var cartItems;
+ var totalItems;
 
 fetch("http://localhost:3000/items")
   .then(function (response) {
@@ -14,37 +15,11 @@ fetch("http://localhost:3000/items")
   })
   .then(function  (myJson) {
     console.log(myJson.data[0]);
-    var da=myJson.data[0]["image"]; 
-    /*console.log(toBase64( da["data"]))
-    console.log("data:image/png;base64,${toBase64( da['data'])}") */
-    //document.getElementById("card").innerHTML = `<img src="data:image/png;base64,${toBase64( da["data"])}"/>`;
-    //document.getElementById("itemIMG1").src=toBase64( da['data']);
-/* 
-    var html =(` <div class="mdc-layout-grid__cell--span-6">
-    <div class="item">
-    <div class="img" id="itemIMG">
-        <img id="itemIMG1" src="" alt="" srcset="">
-    </div>
-    <div class="otherDetails">
-        <h1 class="mdc-typography--headline5" style="font-size: 30px; font-weight: 900;" id="itemName"></h1>
-        <h3 class="mdc-typography--caption" style="font-size: 20px; height: 60px; line-clamp: 5; text-overflow: ellipsis;overflow: hidden; " id="itemDesc"></h3>
-        <h2 class="mdc-typography--headline5" style="font-size: 30px;" id="itemPrice"></h2>
-    </div>
-</div> </div>`);
-
-var totalHtml=html; */
-
-
-
-/* 
-     document.getElementById("itemIMG").innerHTML = `<img style="height:25vh; width:9vw; border-radius: 30px;" src="data:image/png;base64,${toBase64( da["data"])}"/>`;
-    document.getElementById("itemName").innerHTML = myJson.data[0]["name"];
-    document.getElementById("itemDesc").innerHTML = myJson.data[0]["description"];
-    document.getElementById("itemPrice").innerHTML = myJson.data[0]["price"];   */
     var i=0;
     var totalHtml=`<br>`;
+    totalItems=myJson.data.length;
     while(i < myJson.data.length){
-      var html =(` <li id=${i}><div class="mdc-layout-grid__cell--span-6">
+      var html =(` <li id=item${i}><div class="mdc-layout-grid__cell--span-6">
       <div class="item">
       <div class="img" id="itemIMG">
       <img style="height:25vh; width:9vw; border-radius: 30px;" src="data:image/png;base64,${toBase64( myJson.data[i]["image"]["data"])}"/>
@@ -56,6 +31,7 @@ var totalHtml=html; */
       </div>
   </div> </div></li>`);
 totalHtml+=html;
+
       i++;
     }
     
@@ -66,4 +42,46 @@ document.getElementById("card").innerHTML = totalHtml;
     console.log("Error: " + error);
   });
 
+
+  document.getElementById("item0").addEventListener('click',function (){
+    /**
+     * 
+     * To add to Cart
+     * 
+     *  */
+    console.log("Yaay")
   
+    cartItems.add(myJson.data[i])
+    console.log(cartItems)
+  })
+  .catch(function (error) {
+  console.log("Error: " + error);
+  });
+  
+
+
+
+  var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("cartBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
